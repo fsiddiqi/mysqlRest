@@ -10,6 +10,7 @@ https://jinalshahblog.wordpress.com/2016/10/06/rest-api-using-node-js-and-mysql/
 3. See sample DB entity models in /models starting with Task.js.  Add a model for each entity you need
 4. See REST API URI and implementation samples in /routes.  Add a route for each API you need
 
+$ npm install
 $ npm start
 
 Test in Postman with URI http://localhost:3000/Tasks

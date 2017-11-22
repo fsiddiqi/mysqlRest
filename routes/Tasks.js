@@ -64,6 +64,7 @@ router.put('/:id', function (req, res, next) {
 
     Task.updateTask(req.params.id, req.body, function (err, rows) {
 
+        console.log(req.body);
         if (err) {
             res.json(err);
         } else {

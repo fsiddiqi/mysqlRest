@@ -15,7 +15,6 @@ var Task = {
         console.log("inside service");
         console.log(Task);
         return db.query("Insert into task values(?,?,?)", [Task.Id, Task.Title, Task.Status], callback);
-        //return db.query("insert into task(Id,Title,Status) values(?,?,?)",[Task1.Id,Task1.Title,Task1.Status],callback);
     },
     deleteTask: function (id, callback) {
         return db.query("delete from task where Id=?", [id], callback);

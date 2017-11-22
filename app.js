@@ -6,9 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var routes = require('./routes/index');
-var users = require('./routes/users');
 var Tasks = require('./routes/Tasks');
-var Students = require('./routes/Students');
+var Articles = require('./routes/Articles');
 var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -32,6 +31,7 @@ app.use('/', routes);
 
 /** Add API individual routes here */
 app.use('/Tasks', Tasks);
+app.use('/Articles', Articles);
 // app.use('/stations', Stations);
 
 // catch 404 and forward to error handler

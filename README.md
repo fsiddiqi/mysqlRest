@@ -9,9 +9,13 @@ https://jinalshahblog.wordpress.com/2016/10/06/rest-api-using-node-js-and-mysql/
 2. Edit connection details in dbconnection.js
 3. See sample DB entity models in /models starting with Task.js.  Add a model for each entity you need
 4. See REST API URI and implementation samples in /routes.  Add a route for each API you need
+5. See require statements at top of app.js and your new routes
+6. See app.use statements in middle of app.js and add your new routes
 
+```
 $ npm install
 $ npm start
+```
 
 Test in Postman with URI http://localhost:3000/Tasks
 * GET http://localhost:3000/Tasks to fetch all rows from task table

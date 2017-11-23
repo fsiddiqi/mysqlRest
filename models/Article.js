@@ -14,7 +14,7 @@ var Article = {
     addArticle: function (Article, callback) {
         console.log("inside service");
         console.log(Article);
-        return db.query("Insert into Article values(?,?,?,?)", [Article.Id, Article.Title, Article.url, Article.text], callback);
+        return db.query("Insert into Article values(?,?,?,?)", [Article.Id, Article.title, Article.url, Article.text], callback);
     },
     deleteArticle: function (id, callback) {
         return db.query("delete from Article where Id=?", [id], callback);

@@ -11,7 +11,7 @@ router.get('/:id?', function (req, res, next) {
             if (err) {
                 res.json(err);
             } else {
-                res.json(rows);
+                res.json(rows[0]);
             }
         });
     } else {
@@ -21,6 +21,7 @@ router.get('/:id?', function (req, res, next) {
             if (err) {
                 res.json(err);
             } else {
+                res.set("X-Total-Count", rows.length);
                 res.json(rows);
             }
 

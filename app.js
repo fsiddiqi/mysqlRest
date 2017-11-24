@@ -14,7 +14,12 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(cors());
+
+// Configure CORS
+var corsOptions = {
+  exposedHeaders: 'x-total-count'
+}
+app.use(cors(corsOptions));
 app.use(logger('dev'));
 app.use(bodyParser.json({
   limit: '50mb'
@@ -26,6 +31,8 @@ app.use(bodyParser.urlencoded({
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+// Add route to ngadmin in node_modules - we'll use it for the client app
+app.use('/ngadmin', express.static(__dirname + '/node_modules/ng-admin/build/'));
 
 app.use('/', routes);
 

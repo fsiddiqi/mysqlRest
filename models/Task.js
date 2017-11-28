@@ -4,23 +4,27 @@ var Task = {
 
     getAllTasks: function (callback) {
 
-        return db.query("Select * from task", callback);
+        return db.query("SELECT * from task", callback);
 
     },
     getTaskById: function (id, callback) {
 
-        return db.query("select * from task where Id=?", [id], callback);
+        return db.query("SELECT * FROM task WHERE id=?", [id], callback);
     },
     addTask: function (Task, callback) {
         console.log("inside service");
         console.log(Task);
-        return db.query("Insert into task values(?,?,?)", [Task.Id, Task.Title, Task.Status], callback);
+        return db.query("INSERT INTO task VALUES (?,?,?)", [
+            Task.id, Task.title, Task.status
+        ], callback);
     },
     deleteTask: function (id, callback) {
-        return db.query("delete from task where Id=?", [id], callback);
+        return db.query("DELETE FROM task WHERE id=?", [id], callback);
     },
     updateTask: function (id, Task, callback) {
-        return db.query("update task set Title=?,Status=? where Id=?", [Task.Title, Task.Status, id], callback);
+        return db.query("UPDATE task SET title=?, status=? WHERE id=?", [
+            Task.title, Task.status, id
+        ], callback);
     },
     deleteAll: function (item, callback) {
 
@@ -29,7 +33,7 @@ var Task = {
 
             delarr[i] = item[i].Id;
         }
-        return db.query("delete from task where Id in (?)", [delarr], callback);
+        return db.query("DELETE FROM task WHERE id in (?)", [delarr], callback);
     }
 };
 module.exports = Task;

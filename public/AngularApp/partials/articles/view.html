@@ -1,0 +1,27 @@
+<table class="table movietable">
+    <tr>
+        <td>
+            <h3>Details for {{article.title}}</h3>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Title</td>
+        <td>{{article.title}}</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>{{article.url}}</td>
+    </tr>
+    <tr>
+        <td>Text</td>
+        <td>{{article.text}}</td>
+    </tr>
+    <tr>
+        <td>ID</td>
+        <td>{{article.id}}</td>
+    </tr>
+</table>
+<div>
+    <a class="btn btn-primary" ui-sref="editArticle({id:article.id})">Edit</a>
+</div>

@@ -9,7 +9,7 @@ myApp.config([
         // create an admin application
         var admin = nga
             .application('UI Admin')
-            .baseApiUrl('/'); // main API endpoint
+            .baseApiUrl('/'); // main API entrypoint
 
         // Sample API resource to be administered/maintained
         var article = nga.entity('Articles');
@@ -18,17 +18,13 @@ myApp.config([
             .listView()
             .fields([
                 nga.field('title'),
-                nga.field('url'),
-                nga.field('text')
+                nga.field('text'),
+                nga.field('url')
             ])
             .listActions(['show']);
         article
             .creationView()
-            .fields([
-                nga.field('title'),
-                nga.field('url'),
-                nga.field('text')
-            ]);
+            .fields(article.listView().fields());
         // use the same fields as for the creationView
         article
             .editionView()

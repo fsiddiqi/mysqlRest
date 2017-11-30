@@ -1,0 +1,17 @@
+<a ui-sref="newArticle" class="btn-primary btn-lg nodecoration">Add New Article</a>
+<table class="table articletable">
+    <tr>
+        <td>
+            <h3>All Articles</h3>
+        </td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="article in articles">
+        <td>{{article.title}}</td>
+        <td>{{article.text}}</td>
+        <td>
+            <a class="btn btn-primary" ui-sref="viewArticle({id:article.id})">View</a>
+            <a class="btn btn-danger" ng-click="deleteArticle(article)">Delete</a>
+        </td>
+    </tr>
+</table>

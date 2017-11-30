@@ -5,7 +5,7 @@
 angular
     .module('restApp.services', [])
     .factory('Article', function ($resource) {
-        return $resource('http://localhost:3000/Articles/:id', {
+        return $resource('/Articles/:id', {
             id: '@id'
         }, {
             update: {
@@ -14,7 +14,7 @@ angular
         });
     })
     .factory('Task', function ($resource) {
-        return $resource('http://localhost:3000/Tasks/:id', {
+        return $resource('/Tasks/:id', {
             id: '@id'
         }, {
             update: {

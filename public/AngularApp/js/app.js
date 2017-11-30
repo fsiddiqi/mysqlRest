@@ -12,7 +12,7 @@ angular
             url: '/articles',
             templateUrl: 'partials/articles/list.html',
             controller: 'ArticleListController'
-        })
+            })
             .state('viewArticle', {
                 url: '/articles/:id/view',
                 templateUrl: 'partials/articles/view.html',
@@ -28,6 +28,12 @@ angular
                 templateUrl: 'partials/articles/edit.html',
                 controller: 'ArticleEditController'
             })
+            // Login routes
+            .state('login', {
+                url: '/login',
+                templateUrl: 'partials/login.html',
+                controller: 'LoginController'
+            })
             // Task routes
             .state('tasks', {
                 url: '/tasks',
@@ -35,7 +41,7 @@ angular
                 controller: 'TaskListController'
             })
             .state('viewTask', {
-                url: '/tasks/:id/view',
+                url: '/tasks/:username/view',
                 templateUrl: 'partials/tasks/view.html',
                 controller: 'TaskViewController'
             })

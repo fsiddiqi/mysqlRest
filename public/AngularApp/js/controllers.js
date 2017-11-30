@@ -52,6 +52,15 @@ angular
 
         $scope.loadArticle();
     })
+    // Login Controller
+    .controller('LoginController', function ($scope, $state, popupService, $window, Login) {
+        // Task should be User
+        $scope.user = {};
+        $scope.login = function () {
+            console.log("Im logging in");
+            console.log($scope.user);
+        }
+    })
 
     /**
  * Tasks Controller
@@ -72,7 +81,7 @@ angular
     })
     .controller('TaskViewController', function ($scope, $stateParams, Task) {
 
-        $scope.task = Task.get({id: $stateParams.id});
+        $scope.task = Task.get({username: $stateParams.username});
 
     })
     .controller('TaskCreateController', function ($scope, $state, $stateParams, Task) {

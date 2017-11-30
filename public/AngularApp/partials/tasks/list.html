@@ -10,7 +10,7 @@
         <td>{{task.title}}</td>
         <td>{{task.status}}</td>
         <td>
-            <a class="btn btn-primary" ui-sref="viewTask({id:task.id})">View</a>
+            <a class="btn btn-primary" ui-sref="viewTask({username:task.username})">View</a>
             <a class="btn btn-danger" ng-click="deleteTask(task)">Delete</a>
         </td>
     </tr>

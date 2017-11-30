@@ -14,12 +14,18 @@ angular
         });
     })
     .factory('Task', function ($resource) {
-        return $resource('/Tasks/:id', {
-            id: '@id'
+        return $resource('/Tasks/:username', {
+            username: '@username'
         }, {
             update: {
                 method: 'PUT'
             }
+        });
+    })
+    .factory('Login', function ($resource) {
+        return $resource('/Login', {
+            username: '@username',
+            password: '@password'
         });
     })
     .service('popupService', function ($window) {

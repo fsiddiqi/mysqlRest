@@ -9,7 +9,7 @@ var Task = {
     },
     getTaskById: function (id, callback) {
 
-        return db.query("SELECT * FROM task WHERE id=?", [id], callback);
+        return db.query("SELECT * FROM task WHERE username=?", [id], callback);
     },
     addTask: function (Task, callback) {
         console.log("inside service");
@@ -22,7 +22,7 @@ var Task = {
         return db.query("DELETE FROM task WHERE id=?", [id], callback);
     },
     updateTask: function (id, Task, callback) {
-        return db.query("UPDATE task SET title=?, status=? WHERE id=?", [
+        return db.query("UPDATE task SET title=?, status=? WHERE username=?", [
             Task.title, Task.status, id
         ], callback);
     },

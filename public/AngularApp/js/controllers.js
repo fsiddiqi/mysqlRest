@@ -108,7 +108,7 @@ angular
         };
 
         $scope.loadTask = function () {
-            $scope.task = Task.get({id: $stateParams.id});
+            $scope.task = Task.get({username: $stateParams.username});
             console.log($scope);
         };
 

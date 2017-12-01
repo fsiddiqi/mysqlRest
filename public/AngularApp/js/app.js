@@ -12,7 +12,7 @@ angular
             url: '/articles',
             templateUrl: 'partials/articles/list.html',
             controller: 'ArticleListController'
-            })
+        })
             .state('viewArticle', {
                 url: '/articles/:id/view',
                 templateUrl: 'partials/articles/view.html',
@@ -51,7 +51,7 @@ angular
                 controller: 'TaskCreateController'
             })
             .state('editTask', {
-                url: '/tasks/:id/edit',
+                url: '/tasks/:username/edit',
                 templateUrl: 'partials/tasks/edit.html',
                 controller: 'TaskEditController'
             });

@@ -1,5 +1,5 @@
 /**
- * Created by Sandeep on 01/06/14.
+ * Factories, services, API consumers
  */
 
 angular
@@ -22,7 +22,31 @@ angular
             }
         });
     })
-    .service('User', function ($http, $state) {
+    .factory('User', function ($http, $state) {
+        return {
+            login: function () {
+
+                console.log(this.info);
+                $http
+                    .post('/Users/login', this.info)
+                    .then(function (response) {
+                        if (response.data.username) { // User found!
+                            console.log("USER!!");
+                            if (response.data.isAdmin) {
+                                console.log("ADMIN!!");
+                                $state.go('articles');
+                            } else {
+                                $state.go('tasks');
+                            }
+                        } else {
+                            console.log("NO USER!!");
+                            alert("Bad login");
+                        }
+                    });
+            }
+        }
+    })
+    .service('UserService', function ($http, $state) {
         this.login = function () {
             console.log(this.info);
             $http

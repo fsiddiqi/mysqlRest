@@ -53,12 +53,17 @@ angular
         $scope.loadArticle();
     })
     // Login Controller
-    .controller('LoginController', function ($scope, $state, popupService, $window, Login) {
+    .controller('LoginController', function ($scope, $state, popupService, $window, User) {
         // Task should be User
-        $scope.user = {};
+        $scope.User = User;
+        $scope.User.info = {};
+        $scope.User.info.username = "";
+        $scope.User.info.password = "";
         $scope.login = function () {
             console.log("Im logging in");
-            console.log($scope.user);
+            $scope
+                .User
+                .login();
         }
     })
 

@@ -1,5 +1,5 @@
 /**
- * Created by Sandeep on 01/06/14.
+ * Application router
  */
 
 angular.module('restApp', ['ui.router', 'ngResource', 'restApp.controllers', 'restApp.services']);
@@ -57,5 +57,5 @@ angular
             });
     })
     .run(function ($state) {
-        $state.go('articles');
+        $state.go('login');
     });

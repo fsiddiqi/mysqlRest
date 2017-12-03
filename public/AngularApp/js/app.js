@@ -34,6 +34,24 @@ angular
                 templateUrl: 'partials/login.html',
                 controller: 'LoginController'
             })
+
+            // Station routes
+            .state('stations', {
+                url: '/stations',
+                templateUrl: 'partials/stations/list.html',
+                controller: 'StationListController'
+            })
+            .state('viewStation', {
+                url: '/stations/:StopID/view',
+                templateUrl: 'partials/stations/view.html',
+                controller: 'StationViewController'
+            })
+            .state('editStation', {
+                url: '/stations/:StopID/edit',
+                templateUrl: 'partials/stations/edit.html',
+                controller: 'StationEditController'
+            })
+
             // Task routes
             .state('tasks', {
                 url: '/tasks',
@@ -55,7 +73,8 @@ angular
                 templateUrl: 'partials/tasks/edit.html',
                 controller: 'TaskEditController'
             });
+
     })
     .run(function ($state) {
-        $state.go('login');
+        $state.go('stations');
     });

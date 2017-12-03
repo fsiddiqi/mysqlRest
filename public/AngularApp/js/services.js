@@ -22,6 +22,15 @@ angular
             }
         });
     })
+    .factory('Station', function ($resource) {
+        return $resource('/Stations/:StopID', {
+            StopID: '@StopID'
+        }, {
+            update: {
+                method: 'PUT'
+            }
+        });
+    })
     .factory('User', function ($http, $state) {
         return {
             login: function () {

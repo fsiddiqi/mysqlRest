@@ -1,0 +1,23 @@
+<table class="table movietable">
+    <tr>
+        <td>
+            <h3>Details for {{task.title}}</h3>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Title</td>
+        <td>{{task.title}}</td>
+    </tr>
+    <tr>
+        <td>Status</td>
+        <td>{{task.status}}</td>
+    </tr>
+    <tr>
+        <td>ID</td>
+        <td>{{task.id}}</td>
+    </tr>
+</table>
+<div>
+    <a class="btn btn-primary" ui-sref="editTask({username:task.username})">Edit</a>
+</div>

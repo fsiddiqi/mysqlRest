@@ -1,0 +1,16 @@
+<a ui-sref="newArticle" class="btn-primary btn-lg nodecoration">Add New Task</a>
+<table class="table tasktable">
+    <tr>
+        <td>
+            <h3>All Stations</h3>
+        </td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="station in stations">
+        <td>{{station.StopID}}</td>
+        <td>{{station.Name}}</td>
+        <td>
+            <a class="btn btn-primary" ui-sref="editStation({StopID:station.StopID})">Edit</a>
+        </td>
+    </tr>
+</table>

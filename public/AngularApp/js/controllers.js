@@ -118,4 +118,28 @@ angular
         };
 
         $scope.loadTask();
+    })
+    .controller('StationListController', function ($scope, $state, popupService, $window, Station) {
+
+        $scope.stations = Station.query();
+
+        $scope.editStation
+
+    })
+    .controller('StationEditController', function ($scope, $state, $stateParams, Station) {
+
+        $scope.updateStation = function () {
+            $scope
+                .station
+                .$update(function () {
+                    $state.go('stations');
+                });
+        };
+
+        $scope.loadStation = function () {
+            $scope.station = Station.get({StopID: $stateParams.StopID});
+            console.log($scope);
+        };
+
+        $scope.loadStation();
     });
